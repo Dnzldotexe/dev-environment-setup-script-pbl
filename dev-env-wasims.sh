@@ -17,6 +17,7 @@ cd $HOME/wasims/
 
 # Add an alias
 echo 'alias sail="./vendor/bin/sail"' >> ~/.bashrc
+source ~/.bashrc
 
 # Install Tailwind CSS
 sail npm install -D tailwindcss postcss autoprefixer
