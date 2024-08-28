@@ -11,10 +11,10 @@
 sudo apt update && sudo apt full-upgrade -y
 
 # Install Laravel Sail to home directory
-cd ~
+cd $HOME
 curl -s "https://laravel.build/wasims?with=pgsql,redis,meilisearch,mailpit,selenium" | bash
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-cd ~/wasims/
+cd $HOME/wasims/
 
 # Install Tailwind CSS
 sail npm install -D tailwindcss postcss autoprefixer
