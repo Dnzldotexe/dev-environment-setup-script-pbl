@@ -15,23 +15,29 @@ cd $HOME
 curl -s "https://laravel.build/wasims?with=pgsql,redis,meilisearch,mailpit,selenium" | bash
 cd $HOME/wasims/
 
+# Install Tailwind CSS
+./vendor/bin/sail npm install -D tailwindcss postcss autoprefixer
+./vendor/bin/sail npx tailwindcss init -p
+
+# Install React using Laravel Breeze
+./vendor/bin/sail php artisan breeze:install react
+./vendor/bin/sail npm install
+
+# Run Sail in the background
+./vendor/bin/sail up -d
+
+# Run database migrations
+./vendor/bin/sail php artisan migrate
+
+# Compile assets
+./vendor/bin/sail npm run dev
+
 # Add an alias
 sudo echo "alias sail='./vendor/bin/sail'" >> ~/.bashrc
 source ~/.bashrc
 
-# Install Tailwind CSS
-sail npm install -D tailwindcss postcss autoprefixer
-sail npx tailwindcss init -p
-
-# Install React using Laravel Breeze
-sail php artisan breeze:install react
-sail npm install
-
-# Run Sail in the background
-sail up -d
-
-# Run database migrations
-sail php artisan migrate
-
-# Compile assets
-sail npm run dev
+# Print some instructions
+echo "Sail is already running in the background, open your browser and type localhost"
+echo "Use commmand 'sail stop' to stop sail"
+echo "Use commmand 'sail down' to stop and remove sail"
+echo "Use commmand 'sail up -d' to run sail in the background"
