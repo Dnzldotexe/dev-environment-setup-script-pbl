@@ -10,9 +10,6 @@
 # Update distro to the latest version
 sudo apt update && sudo apt full-upgrade -y
 
-# Install Node.js and npm
-sudo apt install -y nodejs npm
-
 # Install Laravel Sail to home directory
 cd ~
 curl -s "https://laravel.build/wasims?with=pgsql,redis,meilisearch,mailpit,selenium" | bash
@@ -20,12 +17,12 @@ alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 cd ~/wasims/
 
 # Install Tailwind CSS
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+sail npm install -D tailwindcss postcss autoprefixer
+sail npx tailwindcss init -p
 
 # Install React using Laravel Breeze
 sail php artisan breeze:install react
-npm install
+sail npm install
 
 # Run Sail in the background
 sail up -d
