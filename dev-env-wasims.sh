@@ -5,7 +5,7 @@
 # 2. You need to have a running Linux environment
 # 3. Clone this shell script
 # 4. Run "chmod u+x dev-env-wasims.sh"
-# 5. Run "./dev-env-wasims.sh"
+# 5. Run "sudo ./dev-env-wasims.sh"
 
 # Update distro to the latest version
 sudo apt update && sudo apt full-upgrade -y
@@ -13,8 +13,10 @@ sudo apt update && sudo apt full-upgrade -y
 # Install Laravel Sail to home directory
 cd $HOME
 curl -s "https://laravel.build/wasims?with=pgsql,redis,meilisearch,mailpit,selenium" | bash
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 cd $HOME/wasims/
+
+# Add an alias
+echo 'alias sail="./vendor/bin/sail"' >> ~/.bashrc
 
 # Install Tailwind CSS
 sail npm install -D tailwindcss postcss autoprefixer
