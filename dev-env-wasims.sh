@@ -16,7 +16,7 @@ curl -s "https://laravel.build/wasims?with=pgsql,redis,meilisearch,mailpit,selen
 cd $HOME/wasims/
 
 # Add an alias
-echo 'alias sail="./vendor/bin/sail"' >> ~/.bashrc
+sudo echo "alias sail='./vendor/bin/sail'" >> ~/.bashrc
 source ~/.bashrc
 
 # Install Tailwind CSS
