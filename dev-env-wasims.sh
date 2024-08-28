@@ -34,4 +34,4 @@ sail up -d
 sail php artisan migrate
 
 # Compile assets
-npm run dev
+sail npm run dev
