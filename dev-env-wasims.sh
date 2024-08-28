@@ -5,7 +5,7 @@
 # 2. You need to have a running Linux environment
 # 3. Clone this shell script
 # 4. Run "chmod u+x dev-env-wasims.sh"
-# 5. Run "sudo ./dev-env-wasims.sh"
+# 5. Run "./dev-env-wasims.sh"
 
 # Update distro to the latest version
 sudo apt update && sudo apt full-upgrade -y
